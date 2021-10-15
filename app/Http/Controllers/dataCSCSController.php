@@ -12,7 +12,7 @@ class dataCSCSController extends Controller
 {
     public function index()
     {
-    	$CustomerServices=CustomerServices::all();
+    	$CustomerServices=CustomerServices::where('deleted', 0)->get();
         return view('customer_services.pages.dataCS', compact('CustomerServices'));
     }
 
@@ -54,7 +54,8 @@ class dataCSCSController extends Controller
     public function destroy($id)
     {
         $CustomerServices=CustomerServices::where('id', $id)->first();     
-        $CustomerServices->delete();
+        $CustomerServices->deleted = 1;
+        $CustomerServices->save();
         return redirect('/customer-services/data-cs');
     }
 }

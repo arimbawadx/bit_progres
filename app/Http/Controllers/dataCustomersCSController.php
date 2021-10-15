@@ -14,7 +14,7 @@ class dataCustomersCSController extends Controller
 {
     public function index()
     {
-    	$customers=Customers::all();
+    	$customers=Customers::where('deleted', 0)->get();
         return view('customer_services.pages.dataCustomers', compact('customers'));
     }
 
@@ -57,18 +57,8 @@ class dataCustomersCSController extends Controller
     public function destroy($id)
     {
         $customers=Customers::where('id', $id)->first();
-        
-        $deleteProjects=Projects::where('customers_id',$id);
-        
-        $id_project=Projects::where('customers_id',$id)->get();
-        
-
-        if ($id_project->first()!=null) {
-            $deleteItemProjects=Items::where('projects_id', $id_project->first()->id);
-            $deleteItemProjects->delete();
-            $deleteProjects->delete();
-        }
-        $customers->delete();
+        $customers->deleted = 1;
+        $customers->save();
         return redirect('/customer-services/data-customers');
     }
 }

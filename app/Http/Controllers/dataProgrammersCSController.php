@@ -14,7 +14,7 @@ class dataProgrammersCSController extends Controller
 {
     public function index()
     {
-    	$Programmers=Programmers::all();
+    	$Programmers=Programmers::where('deleted', 0)->get();
         return view('customer_services.pages.dataProgrammers', compact('Programmers'));
     }
 
@@ -38,7 +38,7 @@ class dataProgrammersCSController extends Controller
         
         \Mail::to($request->email)->send(new sendEmailProgrammer($emailDataLogin));
 
-        Alert::toast('Customer '.$request->nama_programmer.' ditambahkan', 'success');
+        Alert::toast('Programmer '.$request->nama_programmer.' ditambahkan', 'success');
         return redirect('/customer-services/data-programmers');
     }
 
@@ -56,18 +56,8 @@ class dataProgrammersCSController extends Controller
     public function destroy($id)
     {
         $Programmers=Programmers::where('id', $id)->first();
-        
-        $deleteProjects=Projects::where('programmers_id',$id);
-        
-        $id_project=Projects::where('programmers_id',$id)->get();
-        
-
-        if ($id_project->first()!=null) {
-            $deleteItemProjects=Items::where('projects_id', $id_project->first()->id);
-            $deleteItemProjects->delete();
-            $deleteProjects->delete();
-        }
-        $Programmers->delete();
+        $Programmers->deleted = 1;
+        $Programmers->save();
         return redirect('/customer-services/data-programmers');
     }
 }
