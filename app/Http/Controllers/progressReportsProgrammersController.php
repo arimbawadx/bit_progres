@@ -17,7 +17,7 @@ class progressReportsProgrammersController extends Controller
         return view('programmers.pages.progressReports', compact('progress_reports'));
     }
 
-    public function store(Request $request, $id)
+    public function store($id)
     {
         $mainModuls=Items::where('projects_id',$id)->get();
         $jumlahMainModuls=Items::where('projects_id',$id)->get()->count();
@@ -42,7 +42,7 @@ class progressReportsProgrammersController extends Controller
             $progress_reports->customers_id=$projects->first()->customers_id;
             $progress_reports->programmers_id=$projects->first()->programmers_id;
 
-            $progress_reports->report_period=$request->periode_laporan_progress;
+            $progress_reports->report_period=date('Y-m-d');
             $progress_reports->report_to=$report_to;
             $progress_reports->report_date=date('Y-m-d');
             $progress_reports->item_name=$mainModuls[$i]->item_name;

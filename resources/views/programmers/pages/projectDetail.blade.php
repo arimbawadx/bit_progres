@@ -145,7 +145,8 @@
     </div>
   </div>
 
-  <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#myModalGenerateProgressReport">Generate Report</button>
+  <!-- <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#myModalGenerateProgressReport">Generate Report</button> -->
+  <button class="btn btn-primary mb-3" id="generate_report" project-id="{{$p->id}}" project-name="{{$p->project_name}}" project-progress="{{$p->project_progress}}" >Generate Report</button>
   <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#myModalLinkProject"><span><i class="fa fa-link"></i></span></button>
   @if($p->project_URL!=null)
   <a href="{{$p->project_URL}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary mb-3"><span><i class="fa fa-eye"></i></span></a>

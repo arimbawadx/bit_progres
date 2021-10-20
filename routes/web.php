@@ -119,7 +119,7 @@ Route::post('/programmers/project/item/{id}', [ItemProgrammersController::class,
 // ------------------------------------------------------------------end Items-------------------------------------------------------------
 
 // ---------------------------------------------------------------Progress Report-------------------------------------------------------------
-Route::post('/programmers/project/detail/generate/{id}', [progressReportsProgrammersController::class, 'store'])->middleware('SessionProgrammers');
+Route::get('/programmers/project/detail/generate/{id}', [progressReportsProgrammersController::class, 'store'])->middleware('SessionProgrammers');
 Route::get('/programmers/reports/progress-reports', [progressReportsProgrammersController::class, 'index'])->middleware('SessionProgrammers');
 Route::get('/programmers/reports/progress-report/detail/{report_code}', [progressReportsProgrammersController::class, 'show'])->middleware('SessionProgrammers');
 // ------------------------------------------------------------- EndProgress Report -------------------------------------------------------------

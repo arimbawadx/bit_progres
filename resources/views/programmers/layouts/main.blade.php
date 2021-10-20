@@ -146,6 +146,51 @@
     });
     // end ambil project
 
+    // Generate Laporan
+    $('#generate_report').click(function()
+    {
+      var project_id=$(this).attr('project-id');
+      var nama_project=$(this).attr('project-name');
+      var project_progress=$(this).attr('project-progress');
+      const today = new Date();
+      const month = new Array();
+      month[0] = "Januari";
+      month[1] = "Februari";
+      month[2] = "Maret";
+      month[3] = "April";
+      month[4] = "Mei";
+      month[5] = "Juni";
+      month[6] = "Juli";
+      month[7] = "Agustus";
+      month[8] = "September";
+      month[9] = "Oktober";
+      month[10] = "November";
+      month[11] = "Desember";
+      var date = today.getDate()+' '+month[today.getMonth()]+' '+today.getFullYear();
+
+      swal({
+        title: "Yakin Generate Report?",
+        text: "Laporan Project "+nama_project+" akan dibuat dengan total progress "+project_progress+"% pada "+date,
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location="/programmers/project/detail/generate/"+project_id;
+          swal("Laporan telah dibuat", {
+            icon: "success",
+          });
+        } else {
+          swal({
+            title: "Pembuatan Laporan dibatalkan",
+            icon: "warning",
+          });
+        }
+      });
+    });
+    // end Generate Laporan
+
 
     // delete link project
     $('.delete_link_project').click(function()
