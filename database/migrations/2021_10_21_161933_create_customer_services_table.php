@@ -20,6 +20,7 @@ class CreateCustomerServicesTable extends Migration
             $table->string('password');
             $table->string('phone_number');
             $table->string('email');
+            $table->tinyInteger('deleted')->default(0);
             $table->timestamps();
         });
     }

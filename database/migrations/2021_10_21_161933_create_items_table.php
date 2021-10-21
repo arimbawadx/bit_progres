@@ -15,8 +15,7 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('projects_id');
-            $table->foreign('projects_id')->references('id')->on('projects');
+            $table->unsignedBigInteger('projects_id')->index('items_projects_id_foreign');
             $table->string('item_name');
             $table->string('item_description');
             $table->integer('item_progress');

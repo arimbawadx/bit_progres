@@ -15,10 +15,8 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('customers_id');
-            $table->foreign('customers_id')->references('id')->on('customers');
-            $table->unsignedBigInteger('programmers_id')->nullable();
-            $table->foreign('programmers_id')->references('id')->on('programmers');
+            $table->unsignedBigInteger('customers_id')->index('projects_customers_id_foreign');
+            $table->unsignedBigInteger('programmers_id')->nullable()->index('projects_programmers_id_foreign');
             $table->string('project_name');
             $table->string('progress_status');
             $table->integer('project_progress');

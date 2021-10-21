@@ -15,8 +15,7 @@ class CreateHistoryUpdateItemsTable extends Migration
     {
         Schema::create('history_update_items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('items_id');
-            $table->foreign('items_id')->references('id')->on('items');
+            $table->unsignedBigInteger('items_id')->index('history_update_items_items_id_foreign');
             $table->date('update_date');
             $table->string('update_title');
             $table->string('update_info');

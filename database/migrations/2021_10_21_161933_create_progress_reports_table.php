@@ -16,12 +16,9 @@ class CreateProgressReportsTable extends Migration
         Schema::create('progress_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('report_code');
-            $table->unsignedBigInteger('projects_id');
-            $table->foreign('projects_id')->references('id')->on('projects');
-            $table->unsignedBigInteger('customers_id');
-            $table->foreign('customers_id')->references('id')->on('customers');
-            $table->unsignedBigInteger('programmers_id');
-            $table->foreign('programmers_id')->references('id')->on('programmers');
+            $table->unsignedBigInteger('projects_id')->index('progress_reports_projects_id_foreign');
+            $table->unsignedBigInteger('customers_id')->index('progress_reports_customers_id_foreign');
+            $table->unsignedBigInteger('programmers_id')->index('progress_reports_programmers_id_foreign');
             $table->date('report_period');
             $table->integer('report_to');
             $table->date('report_date');
