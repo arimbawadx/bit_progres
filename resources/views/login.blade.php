@@ -14,6 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
   <link rel="icon" type="image/png" href="{{asset('lte/dist/img/bit.png')}}">
+  <link rel="manifest" href="{{asset('manifest/manifest.json')}}">
 </head>
 <body class="hold-transition dark-mode login-page">
   <div class="login-box">
