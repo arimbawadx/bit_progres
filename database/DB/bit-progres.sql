@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2021 at 05:06 AM
+-- Generation Time: Nov 12, 2021 at 04:59 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -48,13 +48,7 @@ INSERT INTO `customers` (`id`, `name`, `username`, `password`, `phone_number`, `
 (1, 'Yoga Arimbawax', 'CUS1901525609', '$2y$10$oOhsEeNgRSdsdlS6129ogOgZIxOr9G/SE12zLUDzNoiwGhFbyBAkO', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-01 11:53:41', '2021-10-13 13:02:48'),
 (2, 'Kadek', 'CUS972363255', '$2y$10$Fpe8Tz8AsIFxj2YunDaHDubp8w.1BQcP4l8dB3ahmLDCCHMVwMMS2', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:26:11', '2021-10-13 11:26:11'),
 (3, 'Ketut', 'CUS1005373033', '$2y$10$lqBHfG9Od/2a/sbKFgV.k.U6Ru/HLAph9J7NQgsdqsw82wOynBsya', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:27:38', '2021-10-13 11:27:38'),
-(4, 'Nengah', 'CUS1545886543', '$2y$10$FHuO6Iaz8SmhyAO/7x3kTOdBe7rwDuvo/4NASU6xlPwab2jILUxy6', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:30:59', '2021-10-13 11:30:59'),
-(5, 'Yoga Arimbawa', 'CUS7847370', '$2y$10$c0VZgTOrcI10uYTWGTIPju/PYSq7yagB5.FcZMwS37hfMaZz6mW52', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 12:42:50', '2021-10-13 12:42:50'),
-(6, 'Yoga Arimbawa', 'CUS170887193', '$2y$10$9CGO9n0dHHuNp7UfQpD4RONafQosavzmpqaUZ6NoWFnDtUTmB.jyW', '085847801933', 'yogade9595.yd@gmail.com', 1, '2021-10-13 13:03:54', '2021-10-13 13:04:44'),
-(7, 'Yoga Ar', 'CUS1638268362', '$2y$10$GAbZ/rRTT2butplndvIbtO.eBsUI/8NiHZlIaENoDp6mlojGr/gL2', '085847801933', 'yogade9595.yd@gmail.com', 1, '2021-10-13 13:05:55', '2021-10-13 13:06:31'),
-(8, 'ff', 'CUS1130471905', '$2y$10$Ylc5.zGHh4RjSQm6OV9U5umCmTpHz0Z9fe415WWiU5rluJ6iOzPW2', '085847801933', 'yogade9595.yd@gmail.com', 1, '2021-10-13 13:09:55', '2021-10-13 13:10:26'),
-(9, 'Yoga Arimbawa', 'CUS1268688656', '$2y$10$bzfdvhlcCeTPAyguvvcJi.shySBxmMAIf/rZb3fnq5A3rXKx0uZ0q', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-15 07:14:59', '2021-10-15 07:14:59'),
-(10, 'sd', 'CUS1421199382', '$2y$10$GMqCaPkgvvFXRQTwxAxkuONF3P2lPjjEbKAqAyhYh4uCgp2hrVtZG', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-27 12:08:59', '2021-10-27 12:08:59');
+(4, 'Nengah', 'CUS1545886543', '$2y$10$FHuO6Iaz8SmhyAO/7x3kTOdBe7rwDuvo/4NASU6xlPwab2jILUxy6', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:30:59', '2021-10-13 11:30:59');
 
 -- --------------------------------------------------------
 
@@ -81,8 +75,7 @@ CREATE TABLE `customer_services` (
 INSERT INTO `customer_services` (`id`, `name`, `username`, `password`, `phone_number`, `email`, `deleted`, `created_at`, `updated_at`) VALUES
 (1, 'Dekga', 'CS294617857', '$2y$10$hY4fFnSRcet3cAEg8kyMaOcJrZi9ImnbDaoQHFeuy6fEY0JulF/ga', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-01 11:52:02', '2021-10-01 11:52:02'),
 (2, 'Komang', 'CS1742602455', '$2y$10$T7xpjjfA6DXq1Wa6IBjq6.Jdk7HXiJI8Dtu6/Wd8FnvvPgf05D7/6', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:30:05', '2021-10-13 11:30:05'),
-(3, 'Yogax', 'CS999107830', '$2y$10$DmvSIiyE.r78oElDEM9eUOs.Qw.Y6njNXiIAbhabDKgA1Im9YJDIG', '085847801933', 'yogade9595.yd@gmail.com', 1, '2021-10-13 13:28:48', '2021-10-13 13:35:06'),
-(4, 'Dekga', 'CS926141364', '$2y$10$oV9Vd.nFNgoGPK3vPTp5Ce0JH35rbnXNyo7aZ9UnoT2YjMzCC2U9e', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-15 13:58:42', '2021-10-15 13:58:42');
+(3, 'Yogax', 'CS999107830', '$2y$10$DmvSIiyE.r78oElDEM9eUOs.Qw.Y6njNXiIAbhabDKgA1Im9YJDIG', '085847801933', 'yogade9595.yd@gmail.com', 1, '2021-10-13 13:28:48', '2021-10-13 13:35:06');
 
 -- --------------------------------------------------------
 
@@ -106,18 +99,7 @@ CREATE TABLE `history_update_items` (
 --
 
 INSERT INTO `history_update_items` (`id`, `items_id`, `update_date`, `update_title`, `update_info`, `update_description`, `created_at`, `updated_at`) VALUES
-(1, 1, '2021-10-01', 'Menambah Presentase', 'DEV1592363217 - Yoga - Menambah Presentase 50%', 'Setengah pembuatan', '2021-10-01 12:45:48', '2021-10-01 12:45:48'),
-(2, 1, '2021-10-01', 'Mengurangi Presentase', 'CUS1901525609 - Yoga Arimbawa - Mengurangi Presentase 5%', 'wah tadi ada bug dibagian.....', '2021-10-01 12:58:55', '2021-10-01 12:58:55'),
-(3, 1, '2021-10-01', 'Update Lainnya', 'CUS1901525609 - Yoga Arimbawa - Update Lainnya', 'Mengubah nama Item', '2021-10-01 13:00:02', '2021-10-01 13:00:02'),
-(4, 1, '2021-10-01', 'Menambah Presentase', 'DEV1592363217 - Yoga - Menambah Presentase 55%', 'selesai item ini', '2021-10-01 13:01:42', '2021-10-01 13:01:42'),
-(5, 3, '2021-10-01', 'Menambah Presentase', 'DEV1592363217 - Yoga - Menambah Presentase 100%', 'selesai item ini', '2021-10-01 13:03:21', '2021-10-01 13:03:21'),
-(6, 2, '2021-10-01', 'Menambah Presentase', 'DEV1592363217 - Yoga - Menambah Presentase 100%', 'selesai item ini', '2021-10-01 13:03:45', '2021-10-01 13:03:45'),
-(7, 1, '2021-10-14', 'Mengurangi Presentase', 'CUS1901525609 - Yoga Arimbawax - Mengurangi Presentase 10%', 'kurang pada...', '2021-10-14 05:55:53', '2021-10-14 05:55:53'),
-(8, 7, '2021-10-16', 'Menambah Presentase', 'DEV1981481994 - Yoga Arimbawa - Menambah Presentase 100%', 'zazaz', '2021-10-16 08:29:42', '2021-10-16 08:29:42'),
-(9, 1, '2021-10-16', 'Mengurangi Presentase', 'CUS1901525609 - Yoga Arimbawax - Mengurangi Presentase 40%', 'asdn', '2021-10-16 08:31:50', '2021-10-16 08:31:50'),
-(10, 3, '2021-10-16', 'Mengurangi Presentase', 'CUS1901525609 - Yoga Arimbawax - Mengurangi Presentase 90%', 'asdac', '2021-10-16 08:32:19', '2021-10-16 08:32:19'),
-(11, 1, '2021-10-16', 'Mengurangi Presentase', 'CUS1901525609 - Yoga Arimbawax - Mengurangi Presentase 10%', 'masih kurang pada ini....', '2021-10-16 12:15:11', '2021-10-16 12:15:11'),
-(12, 1, '2021-10-19', 'Menambah Presentase', 'DEV1592363217 - Yogax - Menambah Presentase 5%', 'new', '2021-10-19 06:46:28', '2021-10-19 06:46:28');
+(8, 7, '2021-10-16', 'Menambah Presentase', 'DEV1981481994 - Yoga Arimbawa - Menambah Presentase 100%', 'zazaz', '2021-10-16 08:29:42', '2021-10-16 08:29:42');
 
 -- --------------------------------------------------------
 
@@ -143,9 +125,6 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `projects_id`, `item_name`, `item_description`, `item_progress`, `item_start`, `item_deadline`, `item_finished`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Halaman Login User', 'Pembuatan halaman login dengan 3 role user: customer, cs, programmer', 45, '2021-10-01', '2021-10-08', '2021-10-01', '2021-10-01 12:13:17', '2021-10-19 06:46:19'),
-(2, 1, 'Halaman Dashboard CS', 'Pembuatan halaman dashboard customer service yang berisi data informasi jumlah user dengan 3 jenis user, yaitu customer, cs, dan programmer', 100, '2021-10-01', '2021-10-15', '2021-10-01', '2021-10-01 12:15:12', '2021-10-01 13:03:41'),
-(3, 1, 'Notifikasi Email Data Login User', 'Pembuatan notifikasi data login user setiap masing-masing user baru ditambahkan via email', 10, '2021-10-01', '2021-10-12', '2021-10-01', '2021-10-01 12:17:41', '2021-10-16 08:32:16'),
 (5, 3, 'Halaman Login', 'pembuatan halaman login pengguna dengan role user blablabla', 0, '2021-10-19', '2021-10-25', NULL, '2021-10-16 08:19:29', '2021-10-19 06:11:28'),
 (6, 3, 'Laporan laba rugi', 'pembuatan halaman laporan laba rugi pada menu blablabla', 0, '2021-10-19', '2021-10-22', NULL, '2021-10-16 08:20:25', '2021-10-19 06:11:28'),
 (7, 5, 'test', 'tes', 100, '2021-10-16', '2021-10-27', '2021-10-16', '2021-10-16 08:26:53', '2021-10-16 08:29:38');
@@ -212,7 +191,6 @@ INSERT INTO `programmers` (`id`, `name`, `username`, `password`, `phone_number`,
 (1, 'Yogax', 'DEV1592363217', '$2y$10$IXe1aXU0Dp1kN4rJMCKQje1129rwuadm6iOr.q6StyhY8hclcz9lq', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-01 11:54:17', '2021-10-13 13:25:49'),
 (2, 'Made', 'DEV1978321460', '$2y$10$sgFL8/vgAxaURG3a.UjeT.KRd1aWKLdnB669xrqgUsGUbaIcovwFa', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:28:54', '2021-10-13 11:28:54'),
 (3, 'Nyoman', 'DEV1200090679', '$2y$10$N1TIqOa7aDebMLGGIdsOIOU4ouzZxWMoNJwtHLAnJm.xyTnx7UFkC', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:29:29', '2021-10-13 11:29:29'),
-(4, 'Yoga', 'DEV30487144', '$2y$10$YtQERGZy7qyFTA.aGLqmIegF7Yry10xipHWNhqbiSajtyI71yY.Ym', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 13:22:14', '2021-10-13 13:22:14'),
 (5, 'Yoga Arimbawa', 'DEV1981481994', '$2y$10$TnVtAz79ejo2RnSNdvNivOuDnQdBjXgV6ZO53t9wWnbEzgdauHaUi', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-15 10:09:11', '2021-10-15 10:09:11');
 
 -- --------------------------------------------------------
@@ -242,25 +220,7 @@ CREATE TABLE `progress_reports` (
 --
 
 INSERT INTO `progress_reports` (`id`, `report_code`, `projects_id`, `customers_id`, `programmers_id`, `report_period`, `report_to`, `report_date`, `item_name`, `item_progress`, `finishing_timeline`, `created_at`, `updated_at`) VALUES
-(1, 'PG11', 1, 1, 1, '2021-10-01', 1, '2021-10-01', 'Halaman Login', 50, 'On Progress', '2021-10-01 12:46:12', '2021-10-01 12:46:12'),
-(2, 'PG11', 1, 1, 1, '2021-10-01', 1, '2021-10-01', 'Halaman Dashboard CS', 0, 'On Progress', '2021-10-01 12:46:12', '2021-10-01 12:46:12'),
-(3, 'PG11', 1, 1, 1, '2021-10-01', 1, '2021-10-01', 'Notifikasi Email Data Login User', 0, 'On Progress', '2021-10-01 12:46:12', '2021-10-01 12:46:12'),
-(4, 'PG12', 1, 1, 1, '2021-10-01', 2, '2021-10-01', 'Halaman Login User', 100, '2021-10-01', '2021-10-01 13:01:59', '2021-10-01 13:01:59'),
-(5, 'PG12', 1, 1, 1, '2021-10-01', 2, '2021-10-01', 'Halaman Dashboard CS', 0, 'On Progress', '2021-10-01 13:01:59', '2021-10-01 13:01:59'),
-(6, 'PG12', 1, 1, 1, '2021-10-01', 2, '2021-10-01', 'Notifikasi Email Data Login User', 0, 'On Progress', '2021-10-01 13:01:59', '2021-10-01 13:01:59'),
-(7, 'PG13', 1, 1, 1, '2021-10-01', 3, '2021-10-01', 'Halaman Login User', 100, '2021-10-01', '2021-10-01 13:03:58', '2021-10-01 13:03:58'),
-(8, 'PG13', 1, 1, 1, '2021-10-01', 3, '2021-10-01', 'Halaman Dashboard CS', 100, '2021-10-01', '2021-10-01 13:03:58', '2021-10-01 13:03:58'),
-(9, 'PG13', 1, 1, 1, '2021-10-01', 3, '2021-10-01', 'Notifikasi Email Data Login User', 100, '2021-10-01', '2021-10-01 13:03:58', '2021-10-01 13:03:58'),
-(10, 'PG51', 5, 1, 5, '2021-10-16', 1, '2021-10-16', 'test', 100, '2021-10-16', '2021-10-16 08:30:13', '2021-10-16 08:30:13'),
-(11, 'PG14', 1, 1, 1, '2021-10-19', 4, '2021-10-19', 'Halaman Login User', 40, '2021-10-01', '2021-10-19 06:22:01', '2021-10-19 06:22:01'),
-(12, 'PG14', 1, 1, 1, '2021-10-19', 4, '2021-10-19', 'Halaman Dashboard CS', 100, '2021-10-01', '2021-10-19 06:22:01', '2021-10-19 06:22:01'),
-(13, 'PG14', 1, 1, 1, '2021-10-19', 4, '2021-10-19', 'Notifikasi Email Data Login User', 10, '2021-10-01', '2021-10-19 06:22:01', '2021-10-19 06:22:01'),
-(14, 'PG15', 1, 1, 1, '2021-10-20', 5, '2021-10-20', 'Halaman Login User', 45, '2021-10-01', '2021-10-20 05:32:45', '2021-10-20 05:32:45'),
-(15, 'PG15', 1, 1, 1, '2021-10-20', 5, '2021-10-20', 'Halaman Dashboard CS', 100, '2021-10-01', '2021-10-20 05:32:45', '2021-10-20 05:32:45'),
-(16, 'PG15', 1, 1, 1, '2021-10-20', 5, '2021-10-20', 'Notifikasi Email Data Login User', 10, '2021-10-01', '2021-10-20 05:32:45', '2021-10-20 05:32:45'),
-(17, 'PG16', 1, 1, 1, '2021-10-20', 6, '2021-10-20', 'Halaman Login User', 45, '2021-10-01', '2021-10-20 06:04:20', '2021-10-20 06:04:20'),
-(18, 'PG16', 1, 1, 1, '2021-10-20', 6, '2021-10-20', 'Halaman Dashboard CS', 100, '2021-10-01', '2021-10-20 06:04:20', '2021-10-20 06:04:20'),
-(19, 'PG16', 1, 1, 1, '2021-10-20', 6, '2021-10-20', 'Notifikasi Email Data Login User', 10, '2021-10-01', '2021-10-20 06:04:20', '2021-10-20 06:04:20');
+(10, 'PG51', 5, 1, 5, '2021-10-16', 1, '2021-10-16', 'test', 100, '2021-10-16', '2021-10-16 08:30:13', '2021-10-16 08:30:13');
 
 -- --------------------------------------------------------
 
@@ -288,7 +248,6 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `customers_id`, `programmers_id`, `project_name`, `progress_status`, `project_progress`, `project_start`, `project_deadline`, `project_finished`, `project_URL`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'Sistem Informasi Pemantauan Progres Pengerjaan Aplikasi', 'On Progress', 52, '2021-10-01', '2021-10-31', NULL, NULL, '2021-10-01 12:11:37', '2021-10-19 06:46:28'),
 (3, 1, 1, 'Sistem Informasi Akuntansi', 'On Progress', 0, '2021-10-19', '2021-10-31', NULL, NULL, '2021-10-16 08:18:18', '2021-10-19 06:11:28'),
 (5, 1, 5, 'Sistem Pendukung Keputusan Metode blabla', 'Selesai', 100, '2021-10-16', '2021-11-26', '2021-10-16', NULL, '2021-10-16 08:25:32', '2021-10-16 08:29:42');
 
@@ -359,7 +318,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `customer_services`
