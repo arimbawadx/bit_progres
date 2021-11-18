@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2021 at 04:59 AM
+-- Generation Time: Nov 18, 2021 at 08:47 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -48,7 +48,8 @@ INSERT INTO `customers` (`id`, `name`, `username`, `password`, `phone_number`, `
 (1, 'Yoga Arimbawax', 'CUS1901525609', '$2y$10$oOhsEeNgRSdsdlS6129ogOgZIxOr9G/SE12zLUDzNoiwGhFbyBAkO', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-01 11:53:41', '2021-10-13 13:02:48'),
 (2, 'Kadek', 'CUS972363255', '$2y$10$Fpe8Tz8AsIFxj2YunDaHDubp8w.1BQcP4l8dB3ahmLDCCHMVwMMS2', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:26:11', '2021-10-13 11:26:11'),
 (3, 'Ketut', 'CUS1005373033', '$2y$10$lqBHfG9Od/2a/sbKFgV.k.U6Ru/HLAph9J7NQgsdqsw82wOynBsya', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:27:38', '2021-10-13 11:27:38'),
-(4, 'Nengah', 'CUS1545886543', '$2y$10$FHuO6Iaz8SmhyAO/7x3kTOdBe7rwDuvo/4NASU6xlPwab2jILUxy6', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:30:59', '2021-10-13 11:30:59');
+(4, 'Nengah', 'CUS1545886543', '$2y$10$FHuO6Iaz8SmhyAO/7x3kTOdBe7rwDuvo/4NASU6xlPwab2jILUxy6', '085847801933', 'yogade9595.yd@gmail.com', 0, '2021-10-13 11:30:59', '2021-10-13 11:30:59'),
+(27, 'sunarya', 'CUS599773717', '$2y$10$XdX24wqRoKlgJv5h.zHy/epF1d1tIPKROkviF/VCmsaPdN0lOGj6y', '085847801933', 'sunarya@yahoo.com', 0, '2021-11-18 07:44:19', '2021-11-18 07:44:19');
 
 -- --------------------------------------------------------
 
@@ -318,7 +319,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `customer_services`
