@@ -20,6 +20,11 @@ class Programmers
         if (!session()->has('dataLoginProgrammers')) {
             return redirect('/');
         }else{
+            $idCS = session()->get('dataLoginProgrammers')['id'];
+            $cs = \App\Models\Programmers::where('id', $idCS)->where('deleted', 0)->first();
+            if (!$cs) {
+                return redirect('/');
+            }
             return $next($request);
         }
     }

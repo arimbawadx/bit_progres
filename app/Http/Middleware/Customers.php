@@ -20,6 +20,11 @@ class Customers
         if (!session()->has('dataLoginCustomers')) {
             return redirect('/');
         }else{
+            $idCS = session()->get('dataLoginCustomers')['id'];
+            $cs = \App\Models\Customers::where('id', $idCS)->where('deleted', 0)->first();
+            if (!$cs) {
+                return redirect('/');
+            }
             return $next($request);
         }
     }

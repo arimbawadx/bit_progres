@@ -14,12 +14,24 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
   <!-- datatables -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
   <link rel="icon" type="image/png" href="{{asset('lte/dist/img/bit.png')}}">
   <link rel="manifest" href="{{asset('manifest/manifest.json')}}">
 
-  
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="{{ asset('lte/plugins/jquery/jquery.min.js') }}"></script>
+  <!-- Bootstrap -->
+  <script src="{{ asset('lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- overlayScrollbars -->
+  <script src="{{ asset('lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+  <!-- AdminLTE App -->
+  <script src="{{ asset('lte/dist/js/adminlte.js') }}"></script>
+  <!-- datatables -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body onload="preloaderFunction()" id="body" class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper">
@@ -104,19 +116,6 @@
       }
     }
   </script>
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
-  <script src="{{ asset('lte/plugins/jquery/jquery.min.js') }}"></script>
-  <!-- Bootstrap -->
-  <script src="{{ asset('lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <!-- overlayScrollbars -->
-  <script src="{{ asset('lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-  <!-- AdminLTE App -->
-  <script src="{{ asset('lte/dist/js/adminlte.js') }}"></script>
-  <!-- datatables -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
   <script type="text/javascript">
     $(document).ready( function () {
     // datatables

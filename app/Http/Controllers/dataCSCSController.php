@@ -12,12 +12,19 @@ class dataCSCSController extends Controller
 {
     public function index()
     {
-    	$CustomerServices=CustomerServices::where('deleted', 0)->get();
+        session()->get('dataLoginCustomerServices')->where('id', 2)->get();
+        $CustomerServices=CustomerServices::where('deleted', 0)->get();
         return view('customer_services.pages.dataCS', compact('CustomerServices'));
     }
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_cs' => 'required',
+            'email' => 'required|unique:App\Models\CustomerServices,email',
+            'no_hp' => 'required|unique:App\Models\CustomerServices,phone_number'
+        ]);
+
         $random="CS".rand();
         $CustomerServices= new CustomerServices;
         $CustomerServices->name=$request->nama_cs;
@@ -56,6 +63,9 @@ class dataCSCSController extends Controller
         $CustomerServices=CustomerServices::where('id', $id)->first();     
         $CustomerServices->deleted = 1;
         $CustomerServices->save();
+        if (session()->get('dataLoginCustomerServices')['id'] == $id) {
+            session()->forget('dataLoginCustomerServices');
+        }
         return redirect('/customer-services/data-cs');
     }
 }
