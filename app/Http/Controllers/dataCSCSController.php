@@ -49,10 +49,18 @@ class dataCSCSController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate(['cs_name' => 'required']);
+        $CustomerService_name=CustomerServices::where('id',$id)->first();
+        $CustomerService_name->name=$request->cs_name;
+        $CustomerService_name->save();
+
+        $request->validate([
+            'cs_email' => 'required|unique:App\Models\CustomerServices,email',
+            'cs_phone' => 'required|unique:App\Models\CustomerServices,phone_number'
+        ]);
         $CustomerServices=CustomerServices::where('id',$id)->first(); 
-        $CustomerServices->name=$request->nama_cs;
-        $CustomerServices->phone_number=$request->no_hp;
-        $CustomerServices->email=$request->email;
+        $CustomerServices->phone_number=$request->cs_phone;
+        $CustomerServices->email=$request->cs_email;
         $CustomerServices->save();
         Alert::toast('Perubahan Berhasil', 'success');
         return redirect('/customer-services/data-cs');

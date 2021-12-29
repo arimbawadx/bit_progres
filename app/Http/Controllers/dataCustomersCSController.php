@@ -51,10 +51,17 @@ class dataCustomersCSController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate(['customer_name' => 'required']);
+        $customer_name=Customers::where('id',$id)->first(); 
+        $customer_name->name=$request->customer_name;
+        $customer_name->save();
+        $request->validate([
+            'customer_email' => 'required|unique:App\Models\Customers,email',
+            'customer_phone' => 'required|unique:App\Models\Customers,phone_number'
+        ]);
         $customers=Customers::where('id',$id)->first(); 
-        $customers->name=$request->nama_customer;
-        $customers->phone_number=$request->no_hp;
-        $customers->email=$request->email;
+        $customers->phone_number=$request->customer_phone;
+        $customers->email=$request->customer_email;
         $customers->save();
         Alert::toast('Perubahan Berhasil', 'success');
         return redirect('/customer-services/data-customers');

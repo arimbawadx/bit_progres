@@ -51,10 +51,17 @@ class dataProgrammersCSController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate(['programmer_name' => 'required']);
+        $Programmer_name=Programmers::where('id',$id)->first(); 
+        $Programmer_name->name=$request->programmer_name;
+        $Programmer_name->save();
+        $request->validate([
+            'programmer_email' => 'required|unique:App\Models\Programmers,email',
+            'programmer_phone' => 'required|unique:App\Models\Programmers,phone_number'
+        ]);
         $Programmers=Programmers::where('id',$id)->first(); 
-        $Programmers->name=$request->nama_programmer;
-        $Programmers->phone_number=$request->no_hp;
-        $Programmers->email=$request->email;
+        $Programmers->phone_number=$request->programmer_phone;
+        $Programmers->email=$request->programmer_email;
         $Programmers->save();
         Alert::toast('Perubahan Berhasil', 'success');
         return redirect('/customer-services/data-programmers');

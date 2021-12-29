@@ -8,6 +8,39 @@
 <!-- Content Wrapper. Contains page content -->
 <section class="content">
   <div class="container">
+    @error('customer_name')
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <h5><i class="icon fas fa-info"></i>Error!</h5>
+          {{$message}}
+        </div>
+      </div>
+    </div>
+    @enderror
+    @error('customer_phone')
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <h5><i class="icon fas fa-info"></i>Error!</h5>
+          {{$message}}
+        </div>
+      </div>
+    </div>
+    @enderror
+    @error('customer_email')
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <h5><i class="icon fas fa-info"></i>Error!</h5>
+          {{$message}}
+        </div>
+      </div>
+    </div>
+    @enderror
     <div class="row">
       <div class="col-md-12">
         <button style="margin-bottom: 20px" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#TambahDataCustomer">
@@ -119,15 +152,15 @@
                       {{csrf_field()}}
                       <div class="form-group">
                         <label for="nama_customer">Nama Customer</label>
-                        <input autocomplete="off" type="text" class="form-control" id="nama_customer" name="nama_customer" value="{{$p -> name}}">
+                        <input autocomplete="off" type="text" class="form-control @error('customer_name') is-invalid @enderror" id="nama_customer" name="customer_name" value="{{$p -> name}}">
                       </div>
                       <div class="form-group">
                         <label for="no_hp">No HP </label>
-                        <input autocomplete="off" type="number" class="form-control" id="no_hp" name="no_hp" value="{{$p -> phone_number}}">
+                        <input autocomplete="off" type="number" class="form-control @error('customer_phone') is-invalid @enderror" id="no_hp" name="customer_phone" value="{{$p -> phone_number}}">
                       </div>
                       <div class="form-group">
                         <label for="email">Email </label>
-                        <input autocomplete="off" type="email" class="form-control" id="email" name="email" value="{{$p -> email}}">
+                        <input autocomplete="off" type="email" class="form-control @error('customer_email') is-invalid @enderror" id="email" name="customer_email" value="{{$p -> email}}">
                       </div>
 
                       <button type="submit" class="btn btn-primary">Simpan</button>
