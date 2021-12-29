@@ -7,47 +7,67 @@
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <section class="content">
-  <!-- The Modal Tambah Programmer-->
-  <div class="modal" id="TambahDataProgrammer">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Tambah Data Programmer</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <form method="post" action="/customer-services/data-programmer">
-            {{csrf_field()}}
-            <div class="form-group">
-              <label for="nama_programmer">Nama Programmer</label>
-              <input required="" autocomplete="off" type="text" class="form-control" id="nama_programmer" name="nama_programmer">
-            </div>
-            <div class="form-group">
-              <label for="no_hp">No HP</label>
-              <input required="" autocomplete="off" type="number" class="form-control" id="no_hp" name="no_hp">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input required="" autocomplete="off" type="email" class="form-control" id="email" name="email">
-            </div>            
-            <button type="submit" class="btn btn-primary">Tambah</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <button style="margin-bottom: 20px" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#TambahDataProgrammer">
           <i class="fa fa-plus"></i><span>Tambah</span>
         </button>
+
+        <!-- The Modal Tambah Programmer-->
+        <div class="modal" id="TambahDataProgrammer">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Tambah Data Programmer</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form method="post" action="/customer-services/data-programmer">
+                  {{csrf_field()}}
+                  <div class="form-group">
+                    <label for="nama_programmer">Nama Programmer</label>
+                    <input autocomplete="off" type="text" class="form-control @error('nama_programmer') is-invalid @enderror" id="nama_programmer" name="nama_programmer" value="{{ old('nama_programmer') }}">
+                    @error('nama_programmer')
+                    <div class="text-danger">{{$message}}</div>
+                    <script type="text/javascript">
+                      $('#TambahDataProgrammer').show();
+                      $('#spinner').hide();
+                    </script>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="no_hp">No HP</label>
+                    <input autocomplete="off" type="number" class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" name="no_hp" value="{{ old('no_hp') }}">
+                    @error('no_hp')
+                    <div class="text-danger">{{$message}}</div>
+                    <script type="text/javascript">
+                      $('#TambahDataProgrammer').show();
+                      $('#spinner').hide();
+                    </script>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input autocomplete="off" type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                    <div class="text-danger">{{$message}}</div>
+                    <script type="text/javascript">
+                      $('#TambahDataProgrammer').show();
+                      $('#spinner').hide();
+                    </script>
+                    @enderror
+                  </div>            
+                  <button type="submit" class="btn btn-primary">Tambah</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -59,7 +79,7 @@
             <th>Nama Programmer</th>
             <th>No HP</th>
             <th>Email</th>
-            <th>Aksi</th>
+            <th width="100px">Aksi</th>
           </thead>
 
 
@@ -72,17 +92,23 @@
               <td>{{$p->phone_number}}</td>
               <td>{{$p->email}}</td>
               <td>
+                <a href="/customer-services/data-programmer/{{$p->id}}/projects" class="btn btn-primary">
+                  <i class="fas fa-hammer"></i><span></span>
+                </a>
+
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalUbahDataProgrammer{{$p->id}}">
                   <i class="fa fa-pen"></i><span></span>
                 </button>
 
+                @if($Project->where('programmers_id', $p->id)->where('progress_status', 'On Progress')->count() == 0)
                 <button programmer-id="{{$p -> id}}" nama-programmer="{{$p -> name}}" class="btn btn-danger delete_programmer">
                   <i class="fa fa-trash"></i><span></span>
                 </button>
+                @endif
               </td>
             </tr>
 
-            <!-- The Modal Ubah data customer-->
+            <!-- The Modal Ubah data Programmer-->
             <div class="modal" id="myModalUbahDataProgrammer{{$p->id}}">
               <div class="modal-dialog">
                 <div class="modal-content">

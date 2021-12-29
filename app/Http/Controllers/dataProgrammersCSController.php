@@ -14,12 +14,19 @@ class dataProgrammersCSController extends Controller
 {
     public function index()
     {
-    	$Programmers=Programmers::where('deleted', 0)->get();
-        return view('customer_services.pages.dataProgrammers', compact('Programmers'));
+        $Project = Projects::all();
+        $Programmers=Programmers::where('deleted', 0)->get();
+        return view('customer_services.pages.dataProgrammers', compact('Programmers', 'Project'));
     }
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_programmer' => 'required',
+            'email' => 'required|unique:App\Models\Programmers,email',
+            'no_hp' => 'required|unique:App\Models\Programmers,phone_number'
+        ]);
+
         $random="DEV".rand();
         $Programmers= new Programmers;
         $Programmers->name=$request->nama_programmer;
@@ -59,5 +66,21 @@ class dataProgrammersCSController extends Controller
         $Programmers->deleted = 1;
         $Programmers->save();
         return redirect('/customer-services/data-programmers');
+    }
+
+    public function Projects($id)
+    {
+        $Project = Projects::all();
+        $Programmer = Programmers::where('id', $id)->first();
+        $Programmers = Programmers::all();
+        return view('customer_services.pages.projectsProgrammer', compact('Project', 'Programmer', 'Programmers'));
+    }
+
+    public function ubahTanggungJawab(Request $request, $id)
+    {
+        $Project = Projects::where('id', $id)->first();
+        $Project->programmers_id = $request->programmers_id;
+        $Project->save();
+        return back()->withInput();
     }
 }

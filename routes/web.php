@@ -48,6 +48,8 @@ Route::get('/customer-services/data-programmers', [dataProgrammersCSController::
 Route::post('/customer-services/data-programmer', [dataProgrammersCSController::class, 'store'])->middleware('SessionCustomerServices');
 Route::post('/customer-services/data-programmer/{id}', [dataProgrammersCSController::class, 'update'])->middleware('SessionCustomerServices');
 Route::get('/customer-services/data-programmer/{id}', [dataProgrammersCSController::class, 'destroy'])->middleware('SessionCustomerServices');
+Route::get('/customer-services/data-programmer/{id}/projects', [dataProgrammersCSController::class, 'projects'])->middleware('SessionCustomerServices');
+Route::post('/customer-services/project/{id}/ubah-programmer', [dataProgrammersCSController::class, 'ubahTanggungJawab'])->middleware('SessionCustomerServices');
 // ------------------------------------------------------------------End Data Programmer-------------------------------------------------------------
 
 // ------------------------------------------------------------------Data CS-----------------------------------------------------------------

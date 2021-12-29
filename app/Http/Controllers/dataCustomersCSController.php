@@ -20,6 +20,12 @@ class dataCustomersCSController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_customer' => 'required',
+            'email' => 'required|unique:App\Models\Customers,email',
+            'no_hp' => 'required|unique:App\Models\Customers,phone_number'
+        ]);
+
         $random="CUS".rand();
         $customers= new Customers;
         $customers->name=$request->nama_customer;

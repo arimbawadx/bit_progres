@@ -20,13 +20,15 @@ class projectProgrammerController extends Controller
 
     public function projectOnProgress()
     {
-        $projectOnProgress=Projects::where('progress_status', 'On Progress')->get();
+        $idProgrammers = session()->get('dataLoginProgrammers')['id'];
+        $projectOnProgress=Projects::where('progress_status', 'On Progress')->where('programmers_id', $idProgrammers)->get();
         return view('programmers.pages.projectOnProgress', compact('projectOnProgress'));
     }
 
     public function projectFinished()
     {
-        $projectFinished=Projects::where('progress_status', 'Selesai')->get();
+        $idProgrammers = session()->get('dataLoginProgrammers')['id'];
+        $projectFinished=Projects::where('progress_status', 'Selesai')->where('programmers_id', $idProgrammers)->get();
         return view('programmers.pages.projectFinished', compact('projectFinished'));
     }
 

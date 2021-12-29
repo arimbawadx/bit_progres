@@ -120,6 +120,7 @@
     $(document).ready( function () {
     // datatables
     $('#datatables').DataTable();
+    $('#datatables2').DataTable();
     // end datatables
 
     // delete cs
