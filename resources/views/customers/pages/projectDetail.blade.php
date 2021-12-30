@@ -132,7 +132,7 @@
 
               <!-- Modal body -->
               <div class="modal-body">
-                <form method="post" action="/customers/project/item/{{$i->id}}">
+                <form method="post" action="/customers/project/item/{{$i->id}}" enctype="multipart/form-data">
                   {{csrf_field()}}
 
 
@@ -145,6 +145,10 @@
                   </div>
                   <div class="form-group">
                     <textarea required="" name="keterangan_update" class="form-control" autocomplete="off" placeholder="Keterangan update"></textarea>
+                  </div>
+                  <div class="custom-file mb-2">
+                    <input accept="image/*" name="gambar_update" type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Upload Gambar<span class="text-warning"> *optional</span></label>
                   </div>
                   <div class="form-group">
                     <label for="presentase_pengerjaan_item">Presentase Progress Items</label>
@@ -227,7 +231,18 @@
                           <?php endif ?>"></i></span>
                           <div class="info-box-content">
                             <div><b>{{date('d F Y', strtotime($iu->update_date))}} - {{$iu->update_info}}</b></div>
-                            <span>{{$iu->update_description}}</span>
+                            <span>{{$iu->update_description}}@if($iu->update_image != null)<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalGambarHistoryUpdate{{$iu->id}}"><i class="fa fa-eye"></i></button>@endif</span>
+
+                            <!-- Modal Gambar -->
+                            <div class="modal fade" id="modalGambarHistoryUpdate{{$iu->id}}">
+                              <div class="modal-dialog modal-dialog-centered modal-xl">
+                                <div class="modal-content">
+                                  <div class="modal-body">
+                                    <img width="100%" src="{{asset('history_update_image/'.$iu->update_image)}}">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                           <!-- /.info-box-content -->
                         </div>

@@ -115,6 +115,23 @@ class ItemCustomersController extends Controller
 
 
         $history_update_item->update_description=$request->keterangan_update;
+
+        // jika gambar update di input
+        if ($request->gambar_update) {
+            // menyimpan data file yang diupload ke variabel $file
+            $file = $request->file('gambar_update');
+            
+            // nama file
+            $namaFile = 'history_update_image_'.date('dmYhis').'.'.$file->getClientOriginalExtension();
+            
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'history_update_image';
+            $file->move($tujuan_upload,$namaFile);
+
+            // menyimpan ke db
+            $history_update_item->update_image = $namaFile;
+        }
+        
         $history_update_item->save();
         $projects->save();
 
