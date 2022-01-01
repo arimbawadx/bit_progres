@@ -20,6 +20,7 @@ class CreateHistoryUpdateItemsTable extends Migration
             $table->string('update_title');
             $table->string('update_info');
             $table->string('update_description');
+            $table->string('update_image', 225)->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Projects;
+use DateTime;
 
 class dashboardProgrammerController extends Controller
 {
@@ -14,10 +15,10 @@ class dashboardProgrammerController extends Controller
         $jumlahProjectOnProgress=Projects::where('progress_status', 'On Progress')->where('programmers_id', $programmers_id)->count();
         $jumlahProjectFinished=Projects::where('progress_status', 'Selesai')->where('programmers_id', $programmers_id)->count();
 
-        // 3 minggu deatline
-        // $Projects3Weeks=order_project::where('status_pengerjaan', '=', 'On Progress')->where('developers_id', $developers_id)->get();
+        // 3 minggu deadline
+        $projects3Weeks=Projects::where('progress_status', 'On Progress')->where('programmers_id', $programmers_id)->get()->sortBy('project_deadline');
 
 
-        return view('programmers.pages.dashboard', compact('jumlahProjectWaitings', 'jumlahProjectOnProgress', 'jumlahProjectFinished'));
+        return view('programmers.pages.dashboard', compact('jumlahProjectWaitings', 'jumlahProjectOnProgress', 'jumlahProjectFinished', 'projects3Weeks'));
     }
 }
